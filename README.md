@@ -48,16 +48,5 @@ $ git clone https://github.com/AlexandreMacedoo/figaros.git
 $ cd figaros
 ```
 
-### Instalando as dependências
-Com o projeto clonado em sua máquina, execute o comando abaixo:
-
-```ssh
-$ yarn
-```
-ou
-```ssh
-$ npm install
-```
-
 ## License
 The figaros is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
