@@ -1,0 +1,10 @@
+{
+  "compileOptions": {
+    "baseURL": "src",
+    "paths": {
+      "~/*": [
+        "*"
+      ]
+    }
+  }
+}

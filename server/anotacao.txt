@@ -1,0 +1,16 @@
+template engine -> Handlebars
+  São arquivos html que podem receber variaveis do node
+
+Background jobs -> Queues
+  São perfeitos para executarem serviços que levam tempo mas que nao modificam a resposta para o cliente na hora da requisicao
+  Utilizar Redis -> Muito performatico salvando apensa chave e valor. Possibilita gravar milhares de registros sem perder performance
+
+  Bee-queue -> bem performatico
+  Kue -> Menos performatico porem muito robusto
+
+  Para cada job criamos a fila dentro da fila armazena a instancia do redis para conectar com o banco, e o handle processa a fila recebendo todas variasveis,
+  processQueue processa em tempo real os jobs que chegam
+
+Ferramentas para tratamento de erro
+  Sentry.io -> Muito importante para manter o high code
+
