@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Container, HourList, Hour, Title } from './styles';
 
-import Background from '~/components/Background';
 import DateInput from '~/components/DateInput';
 import api from '~/services/api';
 
@@ -33,7 +32,6 @@ export default function SelectDateTime({ navigation, provider }) {
   }
 
   return (
-    <Background>
       <Container>
         <DateInput date={date} onChange={setDate} />
         <HourList
@@ -48,6 +46,5 @@ export default function SelectDateTime({ navigation, provider }) {
           )}
         />
       </Container>
-    </Background>
   );
 }

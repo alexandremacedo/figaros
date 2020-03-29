@@ -1,9 +1,9 @@
 <h1 align="center">
-  <img alt="GoBarber" title="GoBarber" src=".github/gobarber-mustache-icon.png" width="200px" />
+  <img alt="figaros" title="figaros" src="../.github/figaros-mustache-icon.png" width="200px" />
 </h1>
 
 <h3 align="center">
-  GoBarber, agende seus serviços
+  Figaro's server - Api for web and mobile applications
 </h3>
 
 <h4 align="center">
@@ -11,7 +11,7 @@
 </h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/AlexandreMacedoo/gobarber-server?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/AlexandreMacedoo/figaros?color=%2304D361">
 
   <a href="https://github.com/AlexandreMacedoo">
     <img alt="Made by Alexandre" src="https://img.shields.io/badge/made%20by-Alexandre-%2304D361">
@@ -19,8 +19,8 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-  <a href="https://github.com/AlexandreMacedoo/gobarber-server/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/AlexandreMacedoo/gobarber-server?style=social">
+  <a href="https://github.com/AlexandreMacedoo/figaros/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/AlexandreMacedoo/figaros?style=social">
   </a>
 </p>
 
@@ -31,8 +31,8 @@
 </p>
 
 
-# gobarber-server
-gobarber-server is an application for scheduling services build with Node.js
+# Figaro's server
+Figaro's server is an api for scheduling services build with Node.js
 
 
 ## Pré requisitos
@@ -41,16 +41,8 @@ gobarber-server is an application for scheduling services build with Node.js
 - Yarn (https://yarnpkg.com/lang/en/)
 - Node (https://nodejs.org/en/)
 - Docker (https://www.docker.com/products/docker-desktop)
-- Rocketseat (https://rocketseat.com.br/starter)
 
 ## Instalação
-### Clonando o repositório
-Com o Git instalado em sua sua máquina, abra o terminal.
-Windows -> **cmd** ou **powershell** execute os comandos abaixo:
-```ssh
-$ git clone https://github.com/AlexandreMacedoo/gobarber-server.git
-$ cd gobarber-server
-```
 ### Instalando as dependências
 Com o projeto clonado em sua máquina, execute o comando abaixo:
 
@@ -61,9 +53,9 @@ $ yarn
 Com o docker instalado e rodando, execute os comandos abaixo:
 
 ```ssh
-$ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:11
-$ docker run --name mongo -p 27017:27017 -d -t mongo
-$ docker run --name redis -p 6379:6379 -d -t redis:alpine
+$ docker run --name postgres-figaros -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:11
+$ docker run --name mongo-figaros -p 27017:27017 -d -t mongo
+$ docker run --name redis-figaros -p 6379:6379 -d -t redis:alpine
 ```
 #### Para visualizar se os containers estão rodando, execute o comando:
 
@@ -85,8 +77,23 @@ $ yarn dev
 ### Acesse a API
 (http://localhost:3333/home)
 
+## Endpoints
+Routes:
+
+Method | Endpoint | Controller | Action | Authentication
+--- | --- | --- | --- | ---
+POST   | /users                             | \src\app\controllers\UserController                   | store      | no
+PUT    | /users                             | \src\app\controllers\UserController                   | update     | yes
+POST   | /sessions                          | \src\app\controllers\SessionController                | store      | no
+POST   | /files                             | \src\app\controllers\FileController                   | store      | yes
+GET    | /providers                         | \src\app\controllers\ProviderController               | all        | yes
+GET    | /providers/{id}/available          | \src\app\controllers\AvailableController              | all        | yes
+POST   | /appointments                      | \src\app\controllers\AppointmentController            | store      | yes
+GET    | /appointments                      | \src\app\controllers\AppointmentController            | all        | yes
+DELETE | /appointments/{id}                 | \src\app\controllers\AppointmentController            | destroy    | yes
+GET    | /schedules                         | \src\app\controllers\ScheduleController               | all        | yes
+GET    | /notifications/{id}                | \src\app\controllers\NotificationController           | index      | yes
+PUT    | /notifications/{id}                | \src\app\controllers\NotificationController           | update     | yes
+
 ## Consulte a documentação
 - Documentação da API - EM BREVE
-
-## License
-The gobarber-server is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

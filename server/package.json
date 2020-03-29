@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js",
+    "server": "docker start postgres-figaros mongo-figaros redis-figaros",
     "dev:debug": "nodemon --inspect src/server.js",
     "queue": "nodemon src/queue.js"
   },
