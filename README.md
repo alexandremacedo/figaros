@@ -47,17 +47,17 @@ Windows -> **cmd** or **powershell** run the commands below:
 $ git clone https://github.com/AlexandreMacedoo/figaros.git
 $ cd figaros
 ```
-### Starting server
+### :mailbox: Starting server
 [ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/server) contains all the steps to configure server
 ```ssh
 $ cd server
 ```
-### Starting mobile application
+### :iphone: Starting mobile application
 [ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/mobile) contains all the steps to configure the mobile application
 ```ssh
 $ cd mobile
 ```
-### Starting web application
+### :computer: Starting web application
 [ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/web) contains all the steps to configure the web application
 ```ssh
 $ cd web
