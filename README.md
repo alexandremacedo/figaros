@@ -52,6 +52,22 @@ $ cd figaros
 ```ssh
 $ cd server
 ```
+#### Endpoints
+Method | Endpoint | Controller | Action | Authentication
+--- | --- | --- | --- | ---
+POST   | /users                             | \src\app\controllers\UserController                   | store      | no
+PUT    | /users                             | \src\app\controllers\UserController                   | update     | yes
+POST   | /sessions                          | \src\app\controllers\SessionController                | store      | no
+POST   | /files                             | \src\app\controllers\FileController                   | store      | yes
+GET    | /providers                         | \src\app\controllers\ProviderController               | all        | yes
+GET    | /providers/{id}/available          | \src\app\controllers\AvailableController              | all        | yes
+POST   | /appointments                      | \src\app\controllers\AppointmentController            | store      | yes
+GET    | /appointments                      | \src\app\controllers\AppointmentController            | all        | yes
+DELETE | /appointments/{id}                 | \src\app\controllers\AppointmentController            | destroy    | yes
+GET    | /schedules                         | \src\app\controllers\ScheduleController               | all        | yes
+GET    | /notifications/{id}                | \src\app\controllers\NotificationController           | index      | yes
+PUT    | /notifications/{id}                | \src\app\controllers\NotificationController           | update     | yes
+
 ### :iphone: Starting mobile application
 [ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/mobile) contains all the steps to configure the mobile application
 ```ssh
