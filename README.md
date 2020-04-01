@@ -25,27 +25,42 @@
 </p>
 
 <p align="center">
-  <a href="#pré-requisitos">Pré requisitos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#instalação">Instalação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#license">Licença</a>
+  <a href="#required">Required</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#instalation">Instalation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>
 </p>
 
 # figaros
 Figaro's is a project built with NodeJS + ReactJS + React Native for scheduling services
 
-## Pré requisitos
+## Required
 - Git (https://git-scm.com/)
 - Yarn (https://yarnpkg.com/lang/en/)
 - Node (https://nodejs.org/en/)
 - Docker (https://www.docker.com/products/docker-desktop)
 
-## Instalação
-### Clonando o repositório
-Com o Git instalado em sua sua máquina, abra o terminal.
-Windows -> **cmd** ou **powershell** execute os comandos abaixo:
+## Instalation
+### Cloning the repository
+With Git installed, open the terminal.
+Windows -> **cmd** or **powershell** run the commands below:
 ```ssh
 $ git clone https://github.com/AlexandreMacedoo/figaros.git
 $ cd figaros
+```
+### Starting server
+[ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/server) contains all the steps to configure server
+```ssh
+$ cd server
+```
+### Starting mobile application
+[ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/mobile) contains all the steps to configure the mobile application
+```ssh
+$ cd mobile
+```
+### Starting web application
+[ReadME](https://github.com/AlexandreMacedoo/figaros/tree/master/web) contains all the steps to configure the web application
+```ssh
+$ cd web
 ```
 
 ## License
