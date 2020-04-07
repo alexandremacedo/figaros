@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Image } from 'react-native';
 import { useDispatch } from 'react-redux';
 import Background from '~/components/Background';
-import logo from '~/assets/logo.png';
+import logo from '~/assets/moustache.png';
 
 import { signUpRequest } from '~/store/modules/auth/actions';
 
@@ -14,6 +14,7 @@ import {
   SignLink,
   SignLinkText,
   ButtonText,
+  Logo
 } from './styles';
 
 export default function SignUp({ navigation }) {
@@ -33,7 +34,7 @@ export default function SignUp({ navigation }) {
   return (
     <Background>
       <Container>
-        <Image source={logo} />
+        <Logo source={logo} />
 
         <Form>
           <FormInput

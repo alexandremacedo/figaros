@@ -3,7 +3,7 @@ import { parseISO, formatRelative } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import { View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Container, Left, Avatar, Info, Name, Time } from './styles';
+import { Container, Left, Avatar, Info, Name, Time, Service } from './styles';
 
 export default function Appointment({ data, onCancel }) {
   const dateParsed = useMemo(() => {
@@ -12,6 +12,8 @@ export default function Appointment({ data, onCancel }) {
       addSuffix: true,
     });
   }, [data.date]);
+
+  console.log(data)
 
   return (
     <>
@@ -28,13 +30,16 @@ export default function Appointment({ data, onCancel }) {
               />
               <Info>
                 <Name>{data.provider.name}</Name>
+                <Service>{data.service.name}</Service>
+                <Service>Preço: R$ {data.service.price}</Service>
+                <Service>Duração: {data.service.duration} minutos</Service>
                 <Time>{dateParsed}</Time>
               </Info>
             </Left>
 
             {data.cancelable && !data.canceled_at && (
               <TouchableOpacity onPress={onCancel}>
-                <Icon name="event-busy" size={20} color="#f64c75" />
+                <Icon name="event-busy" size={20} color="#d63031" />
               </TouchableOpacity>
             )}
           </Container>

@@ -34,16 +34,16 @@ export const FormInput = styled(Input)`
 
 export const SubmitButton = styled(RectButton)`
   height: 46px;
-  background: #3b9eff;
+  background: #e67e22;
   border-radius: 4px;
-  margin-top: 10px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
 `;
 
 export const LogOutButton = styled(RectButton)`
   height: 46px;
-  background: #f64c75;
+  background: #d63031;
   border-radius: 4px;
   margin-top: 10px;
   align-items: center;

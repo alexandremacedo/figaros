@@ -14,7 +14,7 @@ import Background from '~/components/Background';
 import api from '~/services/api';
 
 export default function Confirm({ navigation, route }) {
-  const { provider, time } = route.params;
+  const { provider, time, service } = route.params;
   const [enabled, setEnabled] = useState(true);
 
   const dateFormatted = useMemo(
@@ -34,6 +34,7 @@ export default function Confirm({ navigation, route }) {
       try {
         await api.post('appointments', {
           provider_id: provider.id,
+          service_id: service.id,
           date: time,
         });
       } catch (err) { }
@@ -47,10 +48,13 @@ export default function Confirm({ navigation, route }) {
           source={{
             uri: provider.avatar
               ? provider.avatar.url
-              : `https://api.adorable.io/avatar/50/${provider.name}`,
+              : `https://api.adorable.io/avatar/120/${provider.name}`,
           }}
         />
         <Name>{provider.name}</Name>
+        <Name>{service.name}</Name>
+        <Name>Preço: R$ {service.price}</Name>
+        <Name>Duração: {service.duration} minutos</Name>
         <Time>{dateFormatted}</Time>
         <SubmitButton onPress={() => handleAddAppointment()} enabled={enabled}>
           <ButtonText>Confirmar agendamento</ButtonText>

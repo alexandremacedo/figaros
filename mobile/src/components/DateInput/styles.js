@@ -1,17 +1,17 @@
 import styled from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler'
 
 export const Container = styled.View`
-  margin: 60px 0 30px;
+  flex: 1;
+  margin-bottom: 20px;
 `;
 
-export const DateButton = styled.TouchableOpacity`
-  background: rgba(0, 0, 0, 0.1);
+export const DateButton = styled(RectButton)`
+  background: #e67e22;
   border-radius: 4px;
   flex-direction: row;
   padding: 0 15px;
   height: 46px;
-
-  margin: 0 30px;
   align-items: center;
 `;
 

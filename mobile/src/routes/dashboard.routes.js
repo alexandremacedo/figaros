@@ -15,9 +15,10 @@ export default function DashboardRoutes() {
         activeTintColor: '#fff',
         inactiveTintColor: 'rgba(255,255,255,0.6)',
         style: {
-          backgroundColor: '#8d41a8',
+          backgroundColor: '#0d0d12',
         },
         keyboardHidesTabBar: true,
+        showLabel: false
       }}>
       <Tab.Screen
         name="Agendamentos"

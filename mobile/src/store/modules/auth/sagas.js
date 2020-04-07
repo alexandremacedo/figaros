@@ -22,7 +22,6 @@ export function* signIn({ payload }) {
       return;
     }
 
-    Alert.alert('Sucesso', 'Usuário logado');
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, user));

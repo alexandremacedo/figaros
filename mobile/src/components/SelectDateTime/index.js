@@ -6,8 +6,7 @@ import { Container, HourList, Hour, Title } from './styles';
 import DateInput from '~/components/DateInput';
 import api from '~/services/api';
 
-export default function SelectDateTime({ navigation, provider }) {
-  const [date, setDate] = useState(new Date());
+export default function SelectDateTime({ navigation, provider, date, service }) {
   const [hours, setHours] = useState([]);
 
   useEffect(() => {
@@ -27,24 +26,24 @@ export default function SelectDateTime({ navigation, provider }) {
   function handleSelectHour(time) {
     navigation.navigate('Confirm', {
       provider,
+      service,
       time,
     });
   }
 
   return (
-      <Container>
-        <DateInput date={date} onChange={setDate} />
-        <HourList
-          data={hours}
-          keyExtractor={item => item.time}
-          renderItem={({ item }) => (
-            <Hour
-              onPress={() => handleSelectHour(item.value)}
-              enabled={item.available}>
-              <Title>{item.time}</Title>
-            </Hour>
-          )}
-        />
-      </Container>
+    <Container>
+      <HourList
+        data={hours}
+        keyExtractor={item => item.time}
+        renderItem={({ item }) => (
+          <Hour
+            onPress={() => handleSelectHour(item.value)}
+            enabled={item.available}>
+            <Title>{item.time}</Title>
+          </Hour>
+        )}
+      />
+    </Container>
   );
 }

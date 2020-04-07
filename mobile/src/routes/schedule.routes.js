@@ -2,10 +2,9 @@ import * as React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { createStackNavigator } from '@react-navigation/stack';
+import SelectHour from '~/pages/Schedule/SelectHour';
 
-import { NavigationRouteContext } from '@react-navigation/native';
-import SelectProvider from '~/pages/Schedule/SelectProvider';
-import SelectDateTime from '~/pages/Schedule/SelectDateTime';
+import ScheduleDashboard from '~/pages/Schedule/ScheduleDashboard';
 import Confirm from '~/pages/Schedule/Confirm';
 
 const Stack = createStackNavigator();
@@ -14,10 +13,10 @@ function ScheduleRoutes({ navigation }) {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="SelectProvider"
-        component={SelectProvider}
+        name="ScheduleDashboard"
+        component={ScheduleDashboard}
         options={{
-          headerTitle: 'Selecione o prestador',
+          headerTitle: 'Agendar',
           headerTitleAlign: 'center',
           headerTransparent: true,
           headerTintColor: '#fff',
@@ -35,10 +34,10 @@ function ScheduleRoutes({ navigation }) {
         }}
       />
       <Stack.Screen
-        name="SelectDateTime"
-        component={SelectDateTime}
+        name="SelectHour"
+        component={SelectHour}
         options={{
-          headerTitle: 'Selecione o horário',
+          headerTitle: 'Agendar',
           headerTitleAlign: 'center',
           headerTransparent: true,
           headerTintColor: '#fff',
@@ -48,7 +47,7 @@ function ScheduleRoutes({ navigation }) {
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('SelectProvider');
+                navigation.navigate('ScheduleDashboard');
               }}>
               <Icon name="chevron-left" size={25} color="#fff" />
             </TouchableOpacity>
@@ -69,7 +68,7 @@ function ScheduleRoutes({ navigation }) {
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('SelectProvider');
+                navigation.navigate('SelectHour');
               }}>
               <Icon name="chevron-left" size={25} color="#fff" />
             </TouchableOpacity>

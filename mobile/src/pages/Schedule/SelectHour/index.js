@@ -15,19 +15,9 @@ import {
   Separator
 } from './styles';
 
-export default function SelectHour({ navigation }) {
-  const [providers, setProviders] = useState([]);
-
-  useEffect(() => {
-    async function loadProviders() {
-      const response = await api.get('providers');
-      setProviders(response.data);
-    }
-
-    loadProviders();
-  }, [providers]);
-
-
+export default function SelectHour({ navigation, route }) {
+  const { providers, date, service } = route.params
+  console.log(date)
   function renderItem({ item: provider, index }) {
     return (
       <Content>
@@ -43,7 +33,7 @@ export default function SelectHour({ navigation }) {
           <Name>{provider.name}</Name>
         </Provider>
 
-        <SelectDateTime navigation={navigation} provider={provider} />
+        <SelectDateTime navigation={navigation} provider={provider} date={date} service={service} />
       </Content>
     )
 

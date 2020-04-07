@@ -3,13 +3,13 @@ import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+  margin-bottom: 20px;
 `;
 
 export const HourList = styled.FlatList.attrs({
   numColumns: 4,
   showsVerticalScrollIndicator: false,
 })`
-  padding: 0 20px;
 `;
 
 export const Hour = styled(RectButton)`

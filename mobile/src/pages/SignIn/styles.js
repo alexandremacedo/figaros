@@ -11,12 +11,14 @@ export const Container = styled.KeyboardAvoidingView.attrs({
   flex: 1;
   justify-content: center;
   align-items: center;
+  margin-top: -30px;
   padding: 0 30px;
 `;
 
 export const Form = styled.View`
   align-self: stretch;
-  margin-top: 50px;
+
+  margin-top: -20px;
 `;
 
 export const FormInput = styled(Input)`
@@ -25,7 +27,7 @@ export const FormInput = styled(Input)`
 
 export const SubmitButton = styled(RectButton)`
   height: 46px;
-  background: #3b9eff;
+  background: #e67e22;
   border-radius: 4px;
 
   align-items: center;
@@ -49,3 +51,9 @@ export const SignLinkText = styled.Text`
   font-weight: bold;
   font-size: 16px;
 `;
+
+
+export const Logo = styled.Image`
+  width: 160px;
+  height: 160px;
+`

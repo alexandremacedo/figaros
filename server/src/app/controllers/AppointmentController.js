@@ -3,6 +3,7 @@ import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Appointment from '../models/Appointment';
 import User from '../models/User';
+import Service from '../models/Service';
 import File from '../models/File';
 import Notification from '../schemas/Notification';
 import Queue from '../../lib/Queue';
@@ -31,6 +32,11 @@ class AppointmentController {
             },
           ],
         },
+        {
+          model: Service,
+          as: 'service',
+          attributes: ['id', 'name', 'price', 'duration'],
+        }
       ],
     });
 
@@ -40,14 +46,17 @@ class AppointmentController {
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
+      service_id: Yup.number().required(),
       date: Yup.date().required(),
     });
+
+    console.log(req.body)
 
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { provider_id, date } = req.body;
+    const { provider_id, service_id, date } = req.body;
 
     // Check if provider_id is a provider
     const isProvider = await User.findOne({
@@ -58,6 +67,17 @@ class AppointmentController {
       return res
         .status(401)
         .json({ error: 'You can only create appointments with providers' });
+    }
+
+    // Check if provider_id is a provider
+    const serviceExists = await Service.findOne({
+      where: { id: service_id },
+    });
+
+    if (!serviceExists) {
+      return res
+        .status(401)
+        .json({ error: 'Service does not exists' });
     }
 
     // if (toString(req.userId) === toString(provider_id)) {
@@ -93,6 +113,7 @@ class AppointmentController {
     const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
+      service_id,
       date,
     });
 

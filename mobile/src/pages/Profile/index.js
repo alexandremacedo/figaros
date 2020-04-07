@@ -17,7 +17,7 @@ import Background from '~/components/Background';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 import { signOut } from '~/store/modules/auth/actions';
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
 
