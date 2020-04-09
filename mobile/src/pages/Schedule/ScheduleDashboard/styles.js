@@ -129,11 +129,11 @@ export const Separator = styled.View`
 export const ProvidersList = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
-  margin: 10px 0 20px;
+  margin: 10px 0 10px;
   padding: 0 20px;
 `;
 
-export const Provider = styled.TouchableOpacity`
+export const Provider = styled(RectButton)`
   background: #fff;
   border-radius: 4px;
   flex: 1;
@@ -151,7 +151,7 @@ export const Avatar = styled.Image`
 export const Name = styled.Text`
   color: #333;
   margin: 0 15px;
-  text-align: center;
+  width: 100%;
   font-weight: bold;
   font-size: 14px;
 `;

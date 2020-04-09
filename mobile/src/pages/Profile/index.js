@@ -26,8 +26,8 @@ export default function Dashboard({ navigation }) {
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
 
-  const [name, setName] = useState(profile.name);
-  const [email, setEmail] = useState(profile.email);
+  const [name, setName] = useState(profile ? profile.name : '');
+  const [email, setEmail] = useState(profile ? profile.email : '');
   const [oldPassword, setOldPassword] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
@@ -51,6 +51,10 @@ export default function Dashboard({ navigation }) {
   }
 
   function handleLogOut() {
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'SignIn' }],
+    });
     dispatch(signOut());
   }
 

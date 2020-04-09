@@ -17,6 +17,7 @@ export default function DashboardRoutes() {
         style: {
           backgroundColor: '#0d0d12',
         },
+        keyboardHandlingEnabled: true,
         keyboardHidesTabBar: true,
         showLabel: false
       }}>

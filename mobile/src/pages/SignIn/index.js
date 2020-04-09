@@ -14,6 +14,8 @@ import {
   ButtonText,
   Logo
 } from './styles';
+import { Keyboard } from 'react-native'
+
 
 export default function SignIn({ navigation: { navigate, isFocused } }) {
   const dispatch = useDispatch();
@@ -25,10 +27,13 @@ export default function SignIn({ navigation: { navigate, isFocused } }) {
   const loading = useSelector(state => state.auth.loading);
 
   const signed = useSelector(state => state.auth.signed);
+
   if (signed) {
     navigate('Dashboard')
   }
+
   function handleSubmit() {
+    Keyboard.dismiss()
     dispatch(signInRequest(email, password));
   }
 

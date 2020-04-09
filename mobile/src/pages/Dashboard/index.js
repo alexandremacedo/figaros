@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container, Title, List } from './styles';
 import Background from '~/components/Background';
 import Appointment from '~/components/Appointment';
 
 import api from '~/services/api';
-import { Keyboard } from 'react-native';
 
 export default function Dashboard() {
-  Keyboard.dismiss();
 
   const [appointments, setAppointments] = useState([]);
 
-  async function loadAppointments() {
-    const response = await api.get('appointments');
-    console.log(response.data)
-    setAppointments(response.data);
-  }
 
+  useEffect(() => {
+    async function loadAppointments() {
+      const response = await api.get('appointments');
+      setAppointments(response.data);
+    }
+
+    loadAppointments();
+  })
   // if (isFocused) {
-  loadAppointments();
   // }
 
   async function handleCancel(id) {

@@ -21,10 +21,24 @@ export const Name = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  margin-bottom: 25px;
+`;
+
+export const ServiceContent = styled.View`
+  border: 1px solid #fff;
+  border-radius: 4px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+`;
+export const Service = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
 `;
 
 export const Time = styled.Text`
-  margin-top: 4px;
+  margin-top: 30px;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.6);
 `;

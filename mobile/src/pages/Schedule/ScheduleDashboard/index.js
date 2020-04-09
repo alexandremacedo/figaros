@@ -4,8 +4,6 @@ import Background from '~/components/Background';
 import DateInput from '~/components/DateInput';
 import api from '~/services/api';
 import logo from '~/assets/moustache.png';
-import SelectServices from '~/components/Modal/SelectServices'
-import SelectProviders from '~/components/Modal/SelectProviders'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import {
@@ -74,7 +72,7 @@ export default function ScheduleDashboard({ navigation }) {
             <Avatar
               source={logo}
             />
-            <Name>Todos os profissionais</Name>
+            <Name onPress={() => { setPro(providers); handleModalProvider() }}>Todos os profissionais</Name>
           </Provider>
         ) : <></>}
         <Separator></Separator>
@@ -86,7 +84,7 @@ export default function ScheduleDashboard({ navigation }) {
                 : `https://api.adorable.io/avatar/50/${provider.name}`,
             }}
           />
-          <Name>{provider.name}</Name>
+          <Name onPress={() => { setPro([provider]); handleModalProvider() }}>{provider.name}</Name>
         </Provider>
       </>
     )
@@ -102,14 +100,14 @@ export default function ScheduleDashboard({ navigation }) {
           <Avatar
             source={logo}
           />
-          <Name>{service.name}</Name>
+          <Name onPress={() => {
+            setServ(service); handleModalService()
+          }}>{service.name}</Name>
         </Provider>
       </>
     )
 
   }
-
-  console.log(pro.length)
 
   return (
     <Background>

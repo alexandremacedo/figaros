@@ -17,7 +17,7 @@ import {
 
 export default function SelectHour({ navigation, route }) {
   const { providers, date, service } = route.params
-  console.log(date)
+
   function renderItem({ item: provider, index }) {
     return (
       <Content>

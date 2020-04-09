@@ -13,7 +13,6 @@ export default function Appointment({ data, onCancel }) {
     });
   }, [data.date]);
 
-  console.log(data)
 
   return (
     <>

@@ -8,6 +8,8 @@ import {
   Time,
   SubmitButton,
   ButtonText,
+  Service,
+  ServiceContent
 } from './styles';
 
 import Background from '~/components/Background';
@@ -52,9 +54,11 @@ export default function Confirm({ navigation, route }) {
           }}
         />
         <Name>{provider.name}</Name>
-        <Name>{service.name}</Name>
-        <Name>Preço: R$ {service.price}</Name>
-        <Name>Duração: {service.duration} minutos</Name>
+        <ServiceContent>
+          <Service>{service.name}</Service>
+          <Service>Preço: R$ {service.price}</Service>
+          <Service>Duração: {service.duration} minutos</Service>
+        </ServiceContent>
         <Time>{dateFormatted}</Time>
         <SubmitButton onPress={() => handleAddAppointment()} enabled={enabled}>
           <ButtonText>Confirmar agendamento</ButtonText>
